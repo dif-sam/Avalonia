@@ -67,11 +67,11 @@
   </ControlTheme>
   
   <ControlTheme x:Key="{x:Type Slider}" TargetType="Slider">
-    <Style Selector="Slider:horizontal">
-        <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
-        <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
-        <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+    <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
+    <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
+    <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+    <Style Selector="^:horizontal">
         <Setter Property="Template">
             <ControlTemplate>
                 <DataValidationErrors>
@@ -175,11 +175,7 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="Slider:vertical">
-        <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
-        <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
-        <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+    <Style Selector="^:vertical">
         <Setter Property="Template">
             <ControlTemplate>
                 <DataValidationErrors>
@@ -287,7 +283,7 @@
 
     <!--  Normal State  -->
 
-    <Style Selector="Slider /template/">
+    <Style Selector="^ /template/">
       <Style Selector="^Thumb.SliderThumbStyle">
         <Setter Property="Background" Value="{DynamicResource SliderThumbBackground}" />
       </Style>
@@ -302,25 +298,25 @@
 
     <!--  TickBar Placement States  -->
 
-    <Style Selector="Slider[TickPlacement=TopLeft] /template/ TickBar#LeftTickBar, Slider[TickPlacement=Outside] /template/ TickBar#LeftTickBar">
+    <Style Selector="^[TickPlacement=TopLeft] /template/ TickBar#LeftTickBar, ^[TickPlacement=Outside] /template/ TickBar#LeftTickBar">
         <Setter Property="IsVisible" Value="True" />
     </Style>
 
-    <Style Selector="Slider[TickPlacement=TopLeft] /template/ TickBar#TopTickBar, Slider[TickPlacement=Outside] /template/ TickBar#TopTickBar">
+    <Style Selector="^[TickPlacement=TopLeft] /template/ TickBar#TopTickBar, ^[TickPlacement=Outside] /template/ TickBar#TopTickBar">
         <Setter Property="IsVisible" Value="True" />
     </Style>
 
-    <Style Selector="Slider[TickPlacement=BottomRight] /template/ TickBar#BottomTickBar, Slider[TickPlacement=Outside] /template/ TickBar#BottomTickBar">
+    <Style Selector="^[TickPlacement=BottomRight] /template/ TickBar#BottomTickBar, ^[TickPlacement=Outside] /template/ TickBar#BottomTickBar">
         <Setter Property="IsVisible" Value="True" />
     </Style>
 
-    <Style Selector="Slider[TickPlacement=BottomRight] /template/ TickBar#RightTickBar, Slider[TickPlacement=Outside] /template/ TickBar#RightTickBar">
+    <Style Selector="^[TickPlacement=BottomRight] /template/ TickBar#RightTickBar, ^[TickPlacement=Outside] /template/ TickBar#RightTickBar">
         <Setter Property="IsVisible" Value="True" />
     </Style>
 
     <!--  Disabled State  -->
 
-    <Style Selector="Slider:disabled /template/">
+    <Style Selector="^:disabled /template/">
       <Style Selector="^ContentPresenter#HeaderContentPresenter">
         <Setter Property="Foreground" Value="{DynamicResource SliderHeaderForegroundDisabled}" />
       </Style>
@@ -342,7 +338,7 @@
     </Style>
 
     <!--  PointerOver State  -->
-    <Style Selector="Slider:pointerover /template/">
+    <Style Selector="^:pointerover /template/">
       <Style Selector="^Grid#SliderContainer">
         <Setter Property="Background" Value="{DynamicResource SliderContainerBackgroundDisabled}" />
       </Style>
@@ -365,7 +361,7 @@
     </Style>
 
     <!--  Pressed State  -->
-    <Style Selector="Slider:pressed /template/">
+    <Style Selector="^:pressed /template/">
       <Style Selector="^Grid#SliderContainer">
         <Setter Property="Background" Value="{DynamicResource SliderContainerBackgroundPressed}" />
       </Style>
@@ -381,12 +377,10 @@
       </Style>
     </Style>
 
-    <Style Selector="Slider:error">
+    <Style Selector="^:error">
+      <Setter Property="Foreground" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
       <Style Selector="^/template/ Thumb.SliderThumbStyle">
         <Setter Property="Background" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
-      </Style>
-      <Style Selector="^">
-        <Setter Property="Foreground" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
       </Style>
     </Style>
 
