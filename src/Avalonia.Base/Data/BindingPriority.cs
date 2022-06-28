@@ -37,11 +37,6 @@ namespace Avalonia.Data
         Style,
 
         /// <summary>
-        /// A value from a control template.
-        /// </summary>
-        Template,
-
-        /// <summary>
         /// The binding is uninitialized.
         /// </summary>
         Unset = int.MaxValue,

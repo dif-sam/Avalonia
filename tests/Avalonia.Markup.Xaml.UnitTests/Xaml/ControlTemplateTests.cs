@@ -12,7 +12,7 @@ namespace Avalonia.Markup.Xaml.UnitTests.Xaml
     public class ControlTemplateTests : XamlTestBase
     {
         [Fact]
-        public void Inline_ControlTemplate_Styled_Values_Are_Set_With_Template_Priority()
+        public void Inline_ControlTemplate_Styled_Values_Are_Set_With_Style_Priority()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
@@ -38,12 +38,12 @@ namespace Avalonia.Markup.Xaml.UnitTests.Xaml
                 Assert.Equal(Brushes.Red, presenter.Background);
 
                 var diagnostic = presenter.GetDiagnostic(Button.BackgroundProperty);
-                Assert.Equal(BindingPriority.Template, diagnostic.Priority);
+                Assert.Equal(BindingPriority.TemplatedParent, diagnostic.Priority);
             }
         }
 
         [Fact]
-        public void Style_ControlTemplate_Styled_Values_Are_Set_With_Template_Priority()
+        public void Style_ControlTemplate_Styled_Values_Are_Set_With_Style_Priority()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
@@ -72,12 +72,12 @@ namespace Avalonia.Markup.Xaml.UnitTests.Xaml
                 Assert.Equal(Brushes.Red, presenter.Background);
 
                 var diagnostic = presenter.GetDiagnostic(Button.BackgroundProperty);
-                Assert.Equal(BindingPriority.Template, diagnostic.Priority);
+                Assert.Equal(BindingPriority.TemplatedParent, diagnostic.Priority);
             }
         }
 
         [Fact]
-        public void ControlTemplate_Attached_Values_Are_Set_With_Template_Priority()
+        public void ControlTemplate_Attached_Values_Are_Set_With_Style_Priority()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
@@ -103,12 +103,12 @@ namespace Avalonia.Markup.Xaml.UnitTests.Xaml
                 Assert.Equal(Dock.Top, DockPanel.GetDock(presenter));
 
                 var diagnostic = presenter.GetDiagnostic(DockPanel.DockProperty);
-                Assert.Equal(BindingPriority.Template, diagnostic.Priority);
+                Assert.Equal(BindingPriority.TemplatedParent, diagnostic.Priority);
             }
         }
 
         [Fact]
-        public void ControlTemplate_StaticResources_Are_Set_With_Template_Priority()
+        public void ControlTemplate_StaticResources_Are_Set_With_Style_Priority()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
@@ -137,12 +137,12 @@ namespace Avalonia.Markup.Xaml.UnitTests.Xaml
                 Assert.Equal(Brushes.Red, presenter.Background);
 
                 var diagnostic = presenter.GetDiagnostic(Button.BackgroundProperty);
-                Assert.Equal(BindingPriority.Template, diagnostic.Priority);
+                Assert.Equal(BindingPriority.TemplatedParent, diagnostic.Priority);
             }
         }
 
         [Fact]
-        public void ControlTemplate_DynamicResources_Are_Set_With_Template_Priority()
+        public void ControlTemplate_DynamicResources_Are_Set_With_Style_Priority()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
@@ -171,12 +171,12 @@ namespace Avalonia.Markup.Xaml.UnitTests.Xaml
                 Assert.Equal(Brushes.Red, presenter.Background);
 
                 var diagnostic = presenter.GetDiagnostic(Button.BackgroundProperty);
-                Assert.Equal(BindingPriority.Template, diagnostic.Priority);
+                Assert.Equal(BindingPriority.TemplatedParent, diagnostic.Priority);
             }
         }
 
         [Fact]
-        public void ControlTemplate_TemplateBindings_Are_Set_With_Template_Priority()
+        public void ControlTemplate_TemplateBindings_Are_Set_With_TemplatedParent_Priority()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
@@ -202,7 +202,7 @@ namespace Avalonia.Markup.Xaml.UnitTests.Xaml
                 Assert.Equal("Foo", presenter.Content);
 
                 var diagnostic = presenter.GetDiagnostic(ContentPresenter.ContentProperty);
-                Assert.Equal(BindingPriority.Template, diagnostic.Priority);
+                Assert.Equal(BindingPriority.TemplatedParent, diagnostic.Priority);
             }
         }
 
