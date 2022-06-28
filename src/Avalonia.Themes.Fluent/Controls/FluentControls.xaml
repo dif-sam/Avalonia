@@ -56,6 +56,7 @@
                 <ResourceInclude Source="avares://Avalonia.Themes.Fluent/Controls/DatePicker.xaml" />
                 <ResourceInclude Source="avares://Avalonia.Themes.Fluent/Controls/DropDownButton.xaml" />
                 <ResourceInclude Source="avares://Avalonia.Themes.Fluent/Controls/EmbeddableControlRoot.xaml" />
+                <ResourceInclude Source="avares://Avalonia.Themes.Fluent/Controls/Slider.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
@@ -63,7 +64,6 @@
     <!--  Define ToolTip first so its styles can be overriden by other controls (e.g. TextBox)  -->
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/FocusAdorner.xaml" />
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/MenuItem.xaml" />
-    <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Slider.xaml" />
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ScrollBar.xaml" />
     <!--  TabControl needs to come after TabStrip as it redefines the inner TabStrip.ItemsPanel  -->
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TextBox.xaml" />
